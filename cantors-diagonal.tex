@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{parskip}
+
+\begin{document}
+\newtheorem{theorem}{Theorem}
+\begin{theorem}
+  Suppose $A$ and $B$ are sets and $|B| \neq 1$. Then, no surjection from $A$ to $A \to B$ exists.
+\end{theorem}
+\begin{proof}
+  Let $s$ be any function $B \to B$ such that,
+  \begin{equation*}
+    \forall x \in B, s(x) \neq x.
+  \end{equation*}
+  Assume, for the sake of contradiction, $f$ is a surjection.
+  \begin{equation*}
+    f : A \to (A \to B).
+  \end{equation*}
+  Define
+  \begin{equation*}
+    g: \begin{array}{l} A  \to B \\ x \mapsto s(f(x)(x)). \end{array}
+  \end{equation*}
+  Since $f$ is a surjection,
+  \begin{align*}
+    \exists x \in A :\, & f(x) = g, \\
+                        & f(x)(x) = g(x), \\
+                        & f(x)(x) = s(f(x)(x)).
+  \end{align*}
+  But, by definition, $f(x)(x) \neq s(f(x)(x))$. Hence, $f$ is not a surjection.
+\end{proof}
+\end{document}
