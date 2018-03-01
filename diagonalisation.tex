@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\begin{document}
+Let $M$ be an $n \times n$ matrix with eigenvectors $v_1 .. v_n$ and corresponding eigenvalues $x_1 .. x_n$. Then, $\forall k \in \mathbb{N} \cap [1,n]$,
+\begin{equation}
+  Mv_k = x_k v_k. \label{eigenmult}
+\end{equation}
+Let $A$ be the unique linear transformation such that $\forall k \in \mathbb{N} \cap [1,n]$,
+\begin{align}
+  Ae_k      &= v_k, \label{Amult} \\
+  A^{-1}v_k &= e_k. \label{Ainvmult}
+\end{align}
+Then, $\forall k \in \mathbb{N} \cap [1,n]$,
+\begin{align*}
+  A^{-1}MAe_k &= A^{-1}Mv_k   \tag*{(by substituting \ref{Amult})} \\
+              &= A^{-1}x_kv_k \tag*{(by substituting \ref{eigenmult})} \\
+              &= A^{-1}v_kx_k \tag*{($\times$ on scalars commutes)} \\
+              &= e_kx_k.      \tag*{(by substituting \ref{Ainvmult})}
+\end{align*}
+Thus, $A^{-1}MA$ is a diagonal matrix.
+\end{document}
